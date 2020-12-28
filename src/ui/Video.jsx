@@ -2,7 +2,6 @@ import React from "react";
 
 const Video = ({ videoObject, onClick }) => {
   const video = videoObject || {};
-  // eslint-disable-next-line no-redeclare
 
   return (
     <li onClick={() => onClick(video)}>

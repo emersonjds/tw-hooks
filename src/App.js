@@ -1,9 +1,10 @@
 import React from "react";
 import "./index.css";
 import "./App.css";
+import VideoList from "./ui/VideoList";
 
 const App = () => {
-  return <h1>Project</h1>;
+  return <VideoList />;
 };
 
 export default App;

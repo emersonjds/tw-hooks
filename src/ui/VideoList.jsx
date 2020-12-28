@@ -3,7 +3,7 @@ import Video from "./Video";
 
 const _list = [
     {
-        id: Math.random().toFixed(2),
+        id: Math.random().toFixed(2) * 10,
         title: "Emerson Silva",
         duration: "10",
         cover: "",

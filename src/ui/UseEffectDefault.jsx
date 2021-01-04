@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from "react";
 
 const UseEffectDefault = () => {
-  const [valor, setValor] = useState(0);
+  const [counter, setCounter] = useState(0);
+  const [title, setTitle] = useState("");
 
-  console.log("111");
+  //   useEffect(() => {
+  //     setCounter((counter) => counter + 1);
+  //   }, [title]);
 
   useEffect(() => {
-    // a execucao só ocorre depois que o componente realmente é renderizado
-    console.log("333");
+    setInterval(() => {
+      console.log("111");
+      setCounter((counter) => counter + 1);
+    }, 2000);
   }, []);
-
-  console.log("222");
 
   return (
     <>
-      <input type="text" value={valor} />
-      <button type="button" onClick={() => setValor(valor + 1)}>
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <button type="button" onClick={() => setCounter(counter + 1)}>
+        {" "}
         Botao
       </button>
+      {counter}
     </>
   );
 };

@@ -8,11 +8,25 @@ const UseEffectDefault = () => {
   //     setCounter((counter) => counter + 1);
   //   }, [title]);
 
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     console.log("111");
+  //     setCounter((counter) => counter + 1);
+  //   }, 2000);
+  // }, []);
+
   useEffect(() => {
-    setInterval(() => {
-      console.log("111");
-      setCounter((counter) => counter + 1);
-    }, 2000);
+    function updateScroll() {
+      setTitle(window.scrollY);
+    }
+
+    window.addEventListener("scroll", updateScroll);
+    const timer = setInterval(() => {}, 1000);
+
+    return () => {
+      window.removeEventListener("scroll", updateScroll);
+      clearInterval(timer);
+    };
   }, []);
 
   return (

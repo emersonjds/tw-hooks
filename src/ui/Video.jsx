@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { TimeService } from "../data/services/TimeService";
+import TimeService from "../data/services/TimeService";
+
 
 const Video = ({ videoObject, onClick }) => {
   const video = videoObject || {};

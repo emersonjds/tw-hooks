@@ -1,4 +1,4 @@
-export const TimeService = {
+const TimeService = {
   //method
   formatTime(duration) {
     const minutes = Math.floor(duration / 60)
@@ -8,3 +8,5 @@ export const TimeService = {
     return `${minutes} : ${seconds}`;
   },
 };
+
+export default TimeService;

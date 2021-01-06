@@ -8,9 +8,9 @@ import VideoPlayer from "./ui/VideoPlayer";
 const App = () => {
   return (
     <Fragment>
-      <VideoList />
+      {/*<VideoList />*/}
       <VideoPlayer />
-      <NewVideoForm />
+      {/*<NewVideoForm />*/}
     </Fragment>
   );
 };

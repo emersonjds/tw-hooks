@@ -1,29 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
-import TimeService from "../data/services/TimeService";
 
 const _selectedVideo = {
-  url: "https://www.youtube.com/watch?v=3zilTir2yWs",
+  url:
+    "https://cdn.videvo.net/videvo_files/video/premium/video0037/small_watermarked/docklands_clocks06_preview.webm",
   duration: "10",
   cover:
-    "https://i.ytimg.com/vi/3zilTir2yWs/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLARm8TZMFHWXDUCroj0KQbkG_Jm0Q",
+    "https://media.istockphoto.com/photos/blurred-crowd-of-unrecognizable-at-the-street-picture-id1065178846",
   title: "Video Name",
 };
 
 export default function VideoPlayer() {
   const video = _selectedVideo;
-  const videoRef = useRef(null);
-  const progressTimer = useRef();
+  const videoRef = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const videoElement = videoRef.current;
+
     videoElement.addEventListener("play", play);
     videoElement.addEventListener("pause", pause);
     videoElement.addEventListener("seeked", onProgress);
-
-    setTime(0);
-    pause();
 
     return () => {
       videoElement.removeEventListener("play", play);
@@ -32,67 +28,35 @@ export default function VideoPlayer() {
     };
   }, [video]);
 
-  useEffect(() => {
-    clearInterval(progressTimer.current);
-    if (isPlaying) {
-      progressTimer.current = setInterval(onProgress, 1000);
-    }
-  }, [isPlaying]);
-
-  function play() {
+  const play = () => {
     videoRef.current.play();
     setIsPlaying(true);
-  }
-
-  function pause() {
+  };
+  const pause = () => {
     videoRef.current.pause();
     setIsPlaying(false);
-  }
-
-  function onProgress() {
-    setProgress(videoRef.current.currentTime);
-  }
-
-  function onChangeProgress(event) {
-    setTime(event.target.value);
-  }
-
-  function setTime(time) {
-    videoRef.current.currentTime = time;
-    onProgress();
-  }
+  };
+  const onProgress = () => {};
 
   return (
-    <div className="video_player">
-      <video
-        width="200"
-        height="200"
-        poster={video.cover}
-        ref={videoRef}
-        resource={video.url}
-      />
-      {video.url && (
-        <>
-          <div className="video_controls">
-            <button className="video_button" onClick={isPlaying ? pause : play}>
-              {isPlaying ? "pause" : "start"}
-            </button>
-            <span>
-              {TimeService.formatTime(Math.round(progress))} /{" "}
-              {TimeService.formatTime(video.duration)}
-            </span>
-            <input
-              type="range"
-              value={progress}
-              min={0}
-              max={video.duration}
-              step={0.1}
-              onChange={onChangeProgress}
-            />
-          </div>
-          <h2>{video.title}</h2>
-        </>
-      )}
-    </div>
+    <>
+      <div className="video_player">
+        <video
+          height="200"
+          width="300"
+          poster={video.cover}
+          ref={videoRef}
+          src={video.url}
+        ></video>
+        <div className="controls">
+          <button onClick={isPlaying ? pause : play}>
+            {isPlaying ? "|| Pause" : "|> Play "}
+          </button>
+          <span>10:12 / 20:00</span>
+          <input type="range" min={0} max={video.duration} step={0.1} />
+        </div>
+        <h2>{video.title}</h2>
+      </div>
+    </>
   );
 }

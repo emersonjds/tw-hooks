@@ -24,9 +24,9 @@ const Video = ({ videoObject, onClick }) => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <div>
-        Valor de titulo: {title} - Valor do contador: {counter}
-      </div>
+      {/*<div>*/}
+      {/*  Valor de titulo: {title} - Valor do contador: {counter}*/}
+      {/*</div>*/}
     </>
   );
 };

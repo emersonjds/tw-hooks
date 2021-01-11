@@ -1,17 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import TimeService from "../data/services/TimeService";
-
-const _selectedVideo = {
-	url:
-		"https://cdn.videvo.net/videvo_files/video/premium/video0037/small_watermarked/docklands_clocks06_preview.webm",
-	duration: "10",
-	cover:
-		"https://media.istockphoto.com/photos/blurred-crowd-of-unrecognizable-at-the-street-picture-id1065178846",
-	title: "Video Name",
-};
+import { videoStore } from "../data/video/VideoContext";
 
 export default function VideoPlayer() {
-	const video = _selectedVideo;
+	// state variable
+	let [videoState] = useContext(videoStore);
+
+	//share data of context
+	const video = videoState.selectedVideo;
+
 	const videoRef = useRef();
 	const progressTimer = useRef();
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -71,7 +68,7 @@ export default function VideoPlayer() {
 					poster={video.cover}
 					ref={videoRef}
 					src={video.url}
-				></video>
+				/>
 				{video.url && (
 					<>
 						<div className="controls">

@@ -1,28 +1,22 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import "./index.css";
 import "./App.css";
 import VideoList from "./ui/VideoList";
 import NewVideoForm from "./ui/NewVideoForm";
 import VideoPlayer from "./ui/VideoPlayer";
 
-import { themes, ThemeContext } from "./data/ThemeProvider";
+import { ThemeProvider } from "./data/ThemeProvider";
 import TestContext from "./ui/TestContext";
 
 const App = () => {
-  const [valueTheme, setValueTheme] = useState(themes.light);
-
-  const changeTheme = () =>
-    setValueTheme(valueTheme === themes.light ? themes.dark : themes.light);
-
   return (
     <Fragment>
-      <ThemeContext.Provider value={{ value: valueTheme, changeTheme }}>
+      <ThemeProvider>
         <div className="App">
-          <button onClick={changeTheme}>Mudar tema</button>
-          {valueTheme}
           <TestContext />
         </div>
-      </ThemeContext.Provider>
+      </ThemeProvider>
+
       {/*<VideoList />*/}
       {/* <VideoPlayer /> */}
       {/*<NewVideoForm />*/}

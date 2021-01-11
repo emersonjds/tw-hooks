@@ -1,16 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { ThemeContext } from "../../data/ThemeProvider";
 
 export const TestContext = () => {
-  return (
-    //   consumindo dados do contexto
-    <ThemeContext.Consumer>
-      {(theme) => {
-        return <h1 onClick={theme.changeTheme}>{theme.value}</h1>;
-      }}
-    </ThemeContext.Consumer>
-  );
+  const theme = useContext(ThemeContext);
+  return <h1 onClick={theme.changeTheme}>{theme.value}</h1>;
 };
 
 export default TestContext;

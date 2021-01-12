@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import "./index.css";
 import "./App.css";
 
 import VideoList from "./ui/VideoList";
@@ -9,20 +8,33 @@ import VideoContext from "./data/video/VideoContext";
 
 const App = () => {
   return (
-    <Fragment>
-      {/*<ThemeProvider>*/}
-      {/*  <div className="App">*/}
-      {/*    <TestContext />*/}
-      {/*  </div>*/}
-      {/*</ThemeProvider>*/}
-
-      <VideoContext>
-        <VideoList />
-        {/* <VideoPlayer /> */}
-        {/* <NewVideoForm /> */}
-      </VideoContext>
-    </Fragment>
+    <VideoContext>
+      <div className="container">
+        <div className="top-container">
+          <VideoPlayer />
+          <NewVideoForm />
+        </div>
+        <div className="bottom-container">
+          <VideoList />
+        </div>
+      </div>
+    </VideoContext>
   );
 };
 
 export default App;
+{
+  /*<ThemeProvider>*/
+}
+{
+  /*  <div className="App">*/
+}
+{
+  /*    <TestContext />*/
+}
+{
+  /*  </div>*/
+}
+{
+  /*</ThemeProvider>*/
+}

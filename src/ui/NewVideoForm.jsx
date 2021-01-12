@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./styles/videoStyle.css";
 
 export default function NewVideoForm() {
   const [title, setTitle] = useState("");
@@ -26,7 +27,7 @@ export default function NewVideoForm() {
   }
 
   return (
-    <div>
+    <div className="form">
       <label htmlFor=""> Titulo </label>
       <input
         type="text"

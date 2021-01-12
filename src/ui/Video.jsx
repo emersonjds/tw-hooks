@@ -18,12 +18,12 @@ const Video = ({ videoObject, onClick }) => {
         <span> Tempo de Video : {TimeService.formatTime(video.duration)}</span>
         <h2>{video.title}</h2>
       </li>
-
+      {/* 
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-      />
+      /> */}
       {/*<div>*/}
       {/*  Valor de titulo: {title} - Valor do contador: {counter}*/}
       {/*</div>*/}

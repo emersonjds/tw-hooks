@@ -1,17 +1,42 @@
-.video-list {
+.container {
+  height: 100vh;
+  background-color: #cecece;
+  padding: 1em;
+}
+
+.top-container {
   display: flex;
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  background-color: "orange";
+  justify-content: space-around;
+}
+
+.video-list {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  margin-top: 0px;
 }
 
 .video {
   height: 300px;
   width: 300px;
+  list-style-type: none;
 }
 
 .video img {
   height: 100%;
   width: 100%;
+}
+
+.video_player {
+  width: 50%;
+}
+
+.principal-video {
+  width: 100% !important;
+  height: 300px;
+}
+
+.form {
+  width: 40%;
 }

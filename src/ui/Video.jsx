@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TimeService from "../data/services/TimeService";
-
+import "../ui/styles/videoStyle.css";
 
 const Video = ({ videoObject, onClick }) => {
   const video = videoObject || {};
@@ -13,9 +13,9 @@ const Video = ({ videoObject, onClick }) => {
 
   return (
     <>
-      <li onClick={() => onClick(video)}>
+      <li onClick={() => onClick(video)} className="video">
         <img src={video.cover} alt={video.title} />
-        <span>{TimeService.formatTime(video.duration)}</span>
+        <span> Tempo de Video : {TimeService.formatTime(video.duration)}</span>
         <h2>{video.title}</h2>
       </li>
 

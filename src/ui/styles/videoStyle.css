@@ -1,0 +1,17 @@
+.video-list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: "orange";
+}
+
+.video {
+  height: 300px;
+  width: 300px;
+}
+
+.video img {
+  height: 100%;
+  width: 100%;
+}

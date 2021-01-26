@@ -72,7 +72,7 @@ export default function VideoPlayer() {
           <>
             <div className="controls">
               <button onClick={isPlaying ? pause : play}>
-                {isPlaying ? "|| Pause" : "|> Play "}
+                {isPlaying ? "|| Pausar" : "|> Continuar "}
               </button>
               <span>
                 {TimeService.formatTime(Math.round(progress))} /

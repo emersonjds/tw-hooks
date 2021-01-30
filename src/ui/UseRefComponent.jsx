@@ -23,7 +23,7 @@ const UseRefComponent = () => {
     <>
       {/* <div ref={defaultRef}></div>
       <div ref={hookRef}></div> */}
-      {counter}
+      {/* {counter} */}
       <button onClick={() => setCounter(counter + 1)}>Botao</button>
     </>
   );

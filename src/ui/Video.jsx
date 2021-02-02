@@ -8,7 +8,7 @@ const Video = ({ videoObject, onClick }) => {
   const [title, setTitle] = useState("");
 
   useEffect(() => {
-    setCounter((counter) => counter + 1);
+    setCounter((counter) => counter + 2);
   }, []);
 
   return (

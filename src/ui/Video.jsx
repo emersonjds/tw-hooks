@@ -15,10 +15,10 @@ const Video = ({ videoObject, onClick }) => {
     <>
       <li onClick={() => onClick(video)} className="video">
         <img src={video.cover} alt={video.title} />
-        <span> Tempo de Video : {TimeService.formatTime(video.duration)}</span>
+        <span> Tempo passado : {TimeService.formatTime(video.duration)}</span>
         <h2>{video.title}</h2>
       </li>
-      {/* 
+      {/*
       <input
         type="text"
         value={title}

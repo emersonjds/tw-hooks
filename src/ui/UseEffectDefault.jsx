@@ -21,7 +21,7 @@ const UseEffectDefault = () => {
     }
 
     window.addEventListener("scroll", updateScroll);
-    const timer = setInterval(() => {}, 1000);
+    const timer = setInterval(() => { }, 1000);
 
     return () => {
       window.removeEventListener("scroll", updateScroll);
